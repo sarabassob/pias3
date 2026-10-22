@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO COM AS LOGOS INSTITUCIONAIS -->
+    <header class="cabecalho">
+        <div class="logo-area">
+            <img src="img/logo.png" alt="Logo book+" class="logo-img">
+            <h1>book+</h1>
+        </div>
+        <div class="simbolos-area">
+            <img src="img/logo-ccm.png" alt="Logo Colégio Cívico-Militar" class="logo-institucional">
+            <img src="img/logo-parana.png" alt="Brasão do Estado do Paraná" class="logo-institucional">
+        </div>
+    </header>
+
+    <!-- FRASE MOTIVACIONAL -->
+    <section class="frase-motivacional">
+        <h2>"Quem lê vive mil vidas antes de morrer."</h2>
+    </section>
+
+    <!-- BOTÕES DE NAVEGAÇÃO -->
+    <section class="secao-botoes">
+        <button id="btn-abrir-cadastro" class="btn-principal">Ir para o Cadastro</button>
+    </section>
+
+    <!-- FORMULÁRIO DE CADASTRO DE USUÁRIO -->
+    <section id="area-cadastro" class="secao-cadastro escondido">
+        <div class="form-container">
+            <h3>Criar sua conta</h3>
+            <form id="formulario-cadastro">
+                <div class="campo">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" required placeholder="Digite seu nome">
+                </div>
+                <div class="campo">
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" required placeholder="Sua idade">
+                </div>
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required placeholder="seuemail@email.com">
+                </div>
+                <div class="campo">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" required placeholder="Crie uma senha">
+                </div>
+                <button type="submit" class="btn-salvar">Finalizar Cadastro</button>
+            </form>
+            <p id="mensagem-sucesso" class="mensagem-escondida">Cadastro realizado com sucesso!</p>
+        </div>
+    </section>
+
+    <!-- RECURSOS DA COMUNIDADE -->
+    <section class="funcoes-site">
+        <h2>Recursos da nossa comunidade</h2>
+        <div class="cards-container">
+            <div class="card card-clicavel" id="card-explorar">
+                <h3>📚 Explorar & Cadastrar Livros</h3>
+                <p>Navegue pelo nosso acervo, confira sinopses ou cadastre novos títulos para a comunidade.</p>
+                <span class="dica-clique">Clique para abrir</span>
+            </div>
+
+            <div class="card card-clicavel" id="card-clube">
+                <h3>💬 Clube do Livro</h3>
+                <p>Participe de debates dinâmicos sobre a leitura conjunta oficial da semana.</p>
+                <span class="dica-clique">Clique para participar</span>
+            </div>
+
+            <div class="card card-clicavel" id="card-escritores">
+                <h3>✍️ Pequenos Escritores</h3>
+                <p>Um espaço exclusivo para autores iniciantes publicarem e divulgarem suas obras para outros leitores.</p>
+                <span class="dica-clique">Clique para escrever</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO PEQUENOS ESCRITORES (PUBLICAÇÃO DE HISTÓRIAS) -->
+    <section id="secao-pequenos-escritores" class="secao-escritores escondido">
+        <h2>✍️ Espaço Pequenos Escritores</h2>
+        <p class="instrucao-secao">Escreva e compartilhe seus contos, crônicas e poemas com a comunidade leitora!</p>
+
+        <!-- FORMULÁRIO DE ESCRITA DA OBRA -->
+        <div class="container-escrever-obra">
+            <h3>📝 Publicar Nova Obra</h3>
+            <form id="form-publicar-obra" class="form-publicar-obra">
+                <div class="campos-linha">
+                    <div class="campo">
+                        <label for="titulo-obra">Título da Obra:</label>
+                        <input type="text" id="titulo-obra" required placeholder="Ex: A Lenda do Vale Perdido">
+                    </div>
+                    <div class="campo">
+                        <label for="autor-obra">Nome do Autor(a):</label>
+                        <input type="text" id="autor-obra" required placeholder="Seu nome ou pseudônimo">
+                    </div>
+                    <div class="campo">
+                        <label for="categoria-obra">Categoria:</label>
+                        <select id="categoria-obra" required>
+                            <option value="Conto">Conto</option>
+                            <option value="Poesia / Poema">Poesia / Poema</option>
+                            <option value="Crônica">Crônica</option>
+                            <option value="Capítulo de Livro">Capítulo de Livro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="sinopse-obra">Resumo / Sinopse:</label>
+                    <input type="text" id="sinopse-obra" required placeholder="Uma breve frase sobre o tema da sua história...">
+                </div>
+
+                <div class="campo">
+                    <label for="conteudo-obra">Texto Completo da Obra:</label>
+                    <textarea id="conteudo-obra" rows="8" required placeholder="Escreva sua história aqui... Era uma vez..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-principal">Publicar Obra</button>
+            </form>
+            <p id="msg-obra-publicada" class="mensagem-escondida">Sua obra foi publicada com sucesso!</p>
+        </div>
+
+        <!-- LISTA DE OBRAS PUBLICADAS -->
+        <div class="mural-obras">
+            <h3>📖 Obras Publicadas pelos Alunos e Escritores</h3>
+            <div id="lista-obras-publicadas" class="lista-obras-grid">
+                <!-- Exemplo inicial -->
+                <article class="obra-card">
+                    <span class="categoria-badge">Conto</span>
+                    <h4>O Mistério da Biblioteca Antiga</h4>
+                    <p class="autor-obra-tag">Por <strong>Lucas Gabriel</strong></p>
+                    <p class="resumo-obra"><em>"Entre as estantes cobertas de poeira, um livro sem título brilhava em tom dourado..."</em></p>
+                    <div class="conteudo-completo-obra">
+                        <p>Entre as estantes cobertas de poeira da biblioteca da escola, um livro sem título parecia chamar a atenção de quem passava. Lucas aproximou-se devagar e, ao tocar na capa de couro envelhecido, percebeu que as páginas em branco começavam a se preencher sozinhas com a sua própria história...</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DO CLUBE DO LIVRO (LEITURA CONJUNTA FIXA POR SEMANA) -->
+    <section id="secao-clube-livro" class="secao-clube escondido">
+        <h2>💬 Clube do Livro</h2>
+
+        <div class="leitura-semana-container">
+            <div class="semana-badge">📖 LEITURA OFICIAL DA SEMANA 1</div>
+            <div class="destaque-content">
+                <img src="img/livro1.jpg" alt="Boa Garota, Segredo Mortal" class="destaque-capa">
+                <div class="destaque-info">
+                    <h3>Boa Garota, Segredo Mortal</h3>
+                    <p class="autor-destaque">por Holly Jackson</p>
+
+                    <div class="sinopse-destaque">
+                        <p><strong>Sinopse do Livro Atual:</strong> Há cinco anos, a estudante Andie Bell foi assassinada. A polícia e toda a cidade acreditavam que seu namorado, Sal Singh, era o culpado. Mas Pip Fitz-Amobi acha que o verdadeiro assassino ainda está solto e decide investigar o caso para o seu projeto final de escola.</p>
+                    </div>
+
+                    <div class="meta-semana">
+                        <p>🎯 <strong>Meta de Leitura desta Semana:</strong> Capítulos 1 ao 12 (Discuta suas teorias abaixo!)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cronograma-secao">
+            <h4>🗓️ Cronograma Oficial das Próximas Leituras</h4>
+            <div class="cronograma-grid">
+                <div class="cronograma-card ativo">
+                    <span class="semana-tag">Semana 1 (Atual)</span>
+                    <img src="img/livro1.jpg" alt="Boa Garota, Segredo Mortal">
+                    <h5>Boa Garota, Segredo Mortal</h5>
+                </div>
+                <div class="cronograma-card">
+                    <span class="semana-tag">Semana 2</span>
+                    <img src="img/livro2.jpg" alt="Um de Nós Está Mentindo">
+                    <h5>Um de Nós Está Mentindo</h5>
+                </div>
+                <div class="cronograma-card">
+                    <span class="semana-tag">Semana 3</span>
+                    <img src="img/livro4.jpg" alt="Mentirosos">
+                    <h5>Mentirosos</h5>
+                </div>
+                <div class="cronograma-card">
+                    <span class="semana-tag">Semana 4</span>
+                    <img src="img/livro5.jpg" alt="Jogos de Herança">
+                    <h5>Jogos de Herança</h5>
+                </div>
+                <div class="cronograma-card">
+                    <span class="semana-tag">Semana 5</span>
+                    <img src="img/livro8.jpg" alt="O Mistério do 5 Estrelas">
+                    <h5>O Mistério do 5 Estrelas</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="forum-container">
+            <h3>🔥 Debate da Leitura da Semana</h3>
+            <p>O que você está achando dos acontecimentos da meta semanal? Deixe seu comentário ou teoria!</p>
+
+            <form id="form-comentario" class="form-comentario">
+                <input type="text" id="autor-comentario" placeholder="Seu nome" required>
+                <textarea id="texto-comentario" rows="3" placeholder="Escreva seu comentário ou teoria sobre o livro da semana..." required></textarea>
+                <button type="submit" class="btn-principal">Enviar Comentário</button>
+            </form>
+
+            <div id="lista-comentarios" class="lista-comentarios">
+                <div class="comentario-card">
+                    <strong>Mariana Silva:</strong>
+                    <p>Acho que a Pip está no caminho certo no capítulo 5! Alguém mais achou aquela pista meio suspeita?</p>
+                </div>
+                <div class="comentario-card">
+                    <strong>Carlos Eduardo:</strong>
+                    <p>Não confio em nenhum dos suspeitos até agora! Todos parecem esconder algo sobre aquele dia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA DE LIVROS E ÁREA DE CADASTRO DE LIVROS -->
+    <section id="secao-explorar-livros" class="secao-livros escondido">
+        <h2>📖 Acervo de Livros</h2>
+
+        <div class="container-cadastrar-livro">
+            <h3>➕ Cadastrar Novo Livro no Acervo</h3>
+            <p>Conhece uma boa obra que não está na lista? Adicione-a abaixo para recomendá-la aos outros leitores!</p>
+            
+            <form id="form-cadastrar-livro" class="form-cadastrar-livro">
+                <div class="campos-linha">
+                    <div class="campo">
+                        <label for="titulo-livro">Título do Livro:</label>
+                        <input type="text" id="titulo-livro" required placeholder="Ex: Dom Casmurro">
+                    </div>
+                    <div class="campo">
+                        <label for="autor-livro">Autor(a):</label>
+                        <input type="text" id="autor-livro" required placeholder="Ex: Machado de Assis">
+                    </div>
+                    <div class="campo">
+                        <label for="genero-livro">Gênero:</label>
+                        <select id="genero-livro" required>
+                            <option value="Suspense & Mistério">Suspense & Mistério</option>
+                            <option value="Infantojuvenil & Mistérios Clássicos">Infantojuvenil & Mistérios Clássicos</option>
+                            <option value="Poesia & Clássicos da Literatura">Poesia & Clássicos da Literatura</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="campo">
+                    <label for="url-capa-livro">Link da Imagem da Capa (URL):</label>
+                    <input type="url" id="url-capa-livro" placeholder="https://link-da-imagem.com/capa.jpg (opcional)">
+                </div>
+                <div class="campo">
+                    <label for="sinopse-livro">Sinopse:</label>
+                    <textarea id="sinopse-livro" rows="3" required placeholder="Escreva uma breve sinopse do livro..."></textarea>
+                </div>
+                <button type="submit" class="btn-principal">Adicionar Livro ao Acervo</button>
+            </form>
+            <p id="msg-livro-cadastrado" class="mensagem-escondida">Livro cadastrado com sucesso!</p>
+        </div>
+
+        <p class="instrucao-hover">Passe o mouse por cima da capa para ler a sinopse do livro!</p>
+
+        <div class="genero-bloco escondido" id="bloco-livros-comunidade">
+            <h3 class="titulo-genero">✨ Adicionados pela Comunidade</h3>
+            <div class="livros-grid" id="grid-livros-comunidade">
+            </div>
+        </div>
+
+        <!-- GÊNERO 1: SUSPENSE E MISTÉRIO -->
+        <div class="genero-bloco">
+            <h3 class="titulo-genero">Suspense & Mistério</h3>
+            <div class="livros-grid">
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro1.jpg" alt="Boa Garota, Segredo Mortal">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Pip Fitz-Amobi descobre que a verdade sobre o crime da cidade pode ser ainda mais sombria do que todos imaginavam.</p>
+                        </div>
+                    </div>
+                    <h4>Boa Garota, Segredo Mortal</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro2.jpg" alt="Um de Nós Está Mentindo">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Cinco alunos entram em detenção, mas apenas quatro saem vivos. Todos têm segredos e um motivo para matar.</p>
+                        </div>
+                    </div>
+                    <h4>Um de Nós Está Mentindo</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro3.jpg" alt="Um de Nós É o Próximo">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Um novo jogo de Verdade ou Desafio espalha pânico na escola Bayview High. Quem recusar, terá seu segredo revelado.</p>
+                        </div>
+                    </div>
+                    <h4>Um de Nós É o Próximo</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro4.jpg" alt="Mentirosos">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Uma família tradicional, uma ilha particular e um segredo chocante que muda a vida da jovem Cadence para sempre.</p>
+                        </div>
+                    </div>
+                    <h4>Mentirosos</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro5.jpg" alt="Jogos de Herança">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Uma garota comum herda uma fortuna bilionária de um desconhecido, mas precisa decifrar enigmas mortais para sobreviver.</p>
+                        </div>
+                    </div>
+                    <h4>Jogos de Herança</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro6.jpg" alt="Os Cinco Sobreviventes">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Oito amigos em uma viagem de trailer ficam presos no meio do nada sob a mira de um atirador que exige um segredo.</p>
+                        </div>
+                    </div>
+                    <h4>Os Cinco Sobreviventes</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro7.jpg" alt="O Clube Mary Shelley">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Um clube secreto de estudantes organiza pregadinhas assustadoras baseadas em filmes de terror, até algo dar muito errado.</p>
+                        </div>
+                    </div>
+                    <h4>O Clube Mary Shelley</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- GÊNERO 2: INFANTOJUVENIL & MISTÉRIOS CLÁSSICOS -->
+        <div class="genero-bloco">
+            <h3 class="titulo-genero">Infantojuvenil & Mistérios Clássicos</h3>
+            <div class="livros-grid">
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro8.jpg" alt="O Mistério do 5 Estrelas">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> O mensageiro de um grande hotel descobre um corpo no quarto 222 e inicia uma corrida para provar sua inocência.</p>
+                        </div>
+                    </div>
+                    <h4>O Mistério do 5 Estrelas</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro9.jpg" alt="O Caso da Borboleta Atíria">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Uma jovem borboleta se envolve em uma emocionante investigação no mundo dos insetos para solucionar crimes na floresta.</p>
+                        </div>
+                    </div>
+                    <h4>O Caso da Borboleta Atíria</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro10.jpg" alt="O Fantasma de Canterville">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Uma família americana compra um castelo assombrado na Inglaterra, mas em vez de medo, prega peças no coitado do fantasma.</p>
+                        </div>
+                    </div>
+                    <h4>O Fantasma de Canterville</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- GÊNERO 3: POESIA & CLÁSSICOS DA LITERATURA -->
+        <div class="genero-bloco">
+            <h3 class="titulo-genero">Poesia & Clássicos da Literatura</h3>
+            <div class="livros-grid">
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro11.jpg" alt="Meu Quintal É Maior Do Que O Mundo">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Antologia poética de Manoel de Barros que celebra a simplicidade, a infância, a natureza e as pequenas coisas da vida.</p>
+                        </div>
+                    </div>
+                    <h4>Meu Quintal É Maior Do Que O Mundo</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro12.jpg" alt="Toda Poesia">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Coletânea completa dos versos marcantes, haicais urbanos e genialidade lírica de Paulo Leminski.</p>
+                        </div>
+                    </div>
+                    <h4>Toda Poesia</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro13.jpg" alt="Ou Isto Ou Aquilo">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Clássico da poesia infantil de Cecília Meireles, repleto de ritmo, musicalidade e escolhas do cotidiano.</p>
+                        </div>
+                    </div>
+                    <h4>Ou Isto Ou Aquilo</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro14.jpg" alt="Claro Enigma">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Uma das obras mais profundas de Carlos Drummond de Andrade, abordando reflexões filosóficas, o tempo e a existência.</p>
+                        </div>
+                    </div>
+                    <h4>Claro Enigma</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro15.jpg" alt="Vinte Poemas de Amor e Uma Canção Desesperada">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> A obra-prima romântica do prêmio Nobel Pablo Neruda, recheada de paixão, melancolia e beleza lírica.</p>
+                        </div>
+                    </div>
+                    <h4>Vinte Poemas de Amor e Uma Canção Desesperada</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro16.jpg" alt="Poesia Completa">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Reunião dos poemas poderosos de Maya Angelou sobre força, resistência, identidade e superação.</p>
+                        </div>
+                    </div>
+                    <h4>Poesia Completa - Maya Angelou</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro17.jpg" alt="As Flores do Mal">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Obra mística e revolucionária do simbolismo francês por Charles Baudelaire, explorando o belo, o melancólico e o urbano.</p>
+                        </div>
+                    </div>
+                    <h4>As Flores do Mal</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro18.jpg" alt="Sonho de uma Noite de Verão">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> Comédia clássica de William Shakespeare envolvendo feitiços de amor, poções mágicas e seres da floresta numa noite mágica.</p>
+                        </div>
+                    </div>
+                    <h4>Sonho de uma Noite de Verão</h4>
+                </div>
+
+                <div class="livro-card">
+                    <div class="capa-container">
+                        <img src="img/livro19.jpg" alt="Paraíso Perdido">
+                        <div class="sinopse-overlay">
+                            <p><strong>Sinopse:</strong> O monumental poema épico de John Milton retratando a queda do homem e a rebelião dos anjos no céu.</p>
+                        </div>
+                    </div>
+                    <h4>Paraíso Perdido</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
